@@ -1,13 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var mongodb = require('mongodb')
+var mongodb = require('mongodb');
 var ObjectID = mongodb.ObjectID;
+var path = require('path');
 
 var app = express();
-var distDir = __dirname + "/dist/martgh";
 app.use(bodyParser.json());
-app.use(express.static(distDir));
-app.set("view engine", "html")
+app.use(express.static(__dirname + "/dist/martgh"));
 
 var db;
 
@@ -33,5 +32,5 @@ function handleError(res, reason, message, code){
 
 
 app.get('/', function(req, res){
-    res.render('index')
+    res.sendFile(path.join(__dirname+'/dist/martgh/index.html'))
 })
