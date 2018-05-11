@@ -25,6 +25,7 @@
     "@angular/router": "^6.0.0",
     "body-parser": "^1.18.2",
     "core-js": "^2.5.4",
+    "enhanced-resolve": "^4.0.0",
     "express": "^4.16.3",
     "mongodb": "^3.0.8",
     "mongoose": "^5.1.0",
