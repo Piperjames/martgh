@@ -6,10 +6,9 @@ var ObjectID = mongodb.ObjectID;
 var app = express();
 app.use(bodyParser.json());
 
-var MONGO_URI = process.env.MONGO_URI
 var db;
 
-mongodb.MongoClient.connect(MONGO_URI || "mongodb://localhost:27017/martgh", function(err, client){
+mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/martgh", function(err, client){
     if (err) {
         console.log(err);
         process.exit(1);
