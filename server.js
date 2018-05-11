@@ -6,7 +6,7 @@ var path = require('path');
 
 var app = express();
 app.use(bodyParser.json());
-app.use(express.static(__dirname + "/src"));
+app.use(express.static(__dirname + "/dist/martgh"));
 
 var db;
 
@@ -32,5 +32,5 @@ function handleError(res, reason, message, code){
 
 
 app.get('/', function(req, res){
-    res.sendFile(path.join(__dirname+'/src/index.html'))
+    res.sendFile(path.join(__dirname+'/dist/martgh/index.html'))
 })
