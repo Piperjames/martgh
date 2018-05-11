@@ -7,7 +7,7 @@ var app = express();
 var distDir = __dirname + "/dist/martgh";
 app.use(bodyParser.json());
 app.use(express.static(distDir));
-app.set("view engine", "jade")
+app.set("view engine", "html")
 
 var db;
 
