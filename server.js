@@ -4,7 +4,10 @@ var mongodb = require('mongodb')
 var ObjectID = mongodb.ObjectID;
 
 var app = express();
+var distDir = __dirname + "/dist/martgh";
 app.use(bodyParser.json());
+app.use(express.static(distDir));
+app.set("view engine", "jade")
 
 var db;
 
@@ -28,8 +31,6 @@ function handleError(res, reason, message, code){
     res.status(code || 500).json({"error": message});
 }
 
-var distDir = __dirname + "/dist/martgh";
-app.use(express.static(distDir));
 
 app.get('/', function(req, res){
     res.render('index')
